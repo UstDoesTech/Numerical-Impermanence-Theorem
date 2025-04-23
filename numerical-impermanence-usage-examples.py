@@ -306,75 +306,75 @@ if __name__ == "__main__":
     plt.tight_layout()
     plt.show()
 
-# Interactive transformation demonstration
-def demonstrate_interactive_transformation():
-    """Creates an interactive demonstration of a number transforming across user-defined contexts."""
-    from ipywidgets import interact, FloatSlider, Dropdown
+# # Interactive transformation demonstration
+# def demonstrate_interactive_transformation():
+#     """Creates an interactive demonstration of a number transforming across user-defined contexts."""
+#     from ipywidgets import interact, FloatSlider, Dropdown
     
-    # Initialize the framework
-    framework = NumericalImpermanence()
+#     # Initialize the framework
+#     framework = NumericalImpermanence()
     
-    # Create a number
-    number = framework.create_number("interactive", 1.0, "classical")
+#     # Create a number
+#     number = framework.create_number("interactive", 1.0, "classical")
     
-    # Define context functions
-    context_functions = {
-        "Heisenberg": heisenberg_context,
-        "Fractal": fractal_context,
-        "Relativistic": relativistic_context,
-        "Quantum Field": qft_context,
-        "Cyclical Time": cyclical_time_context
-    }
+#     # Define context functions
+#     context_functions = {
+#         "Heisenberg": heisenberg_context,
+#         "Fractal": fractal_context,
+#         "Relativistic": relativistic_context,
+#         "Quantum Field": qft_context,
+#         "Cyclical Time": cyclical_time_context
+#     }
     
-    # Register all contexts
-    for name, func in context_functions.items():
-        context_id = name.lower().replace(" ", "_")
+#     # Register all contexts
+#     for name, func in context_functions.items():
+#         context_id = name.lower().replace(" ", "_")
         
-        # Create context
-        context = Context(
-            name=name,
-            description=f"Context where numbers transform according to {name} principles",
-            properties={'user_defined': True}
-        )
+#         # Create context
+#         context = Context(
+#             name=name,
+#             description=f"Context where numbers transform according to {name} principles",
+#             properties={'user_defined': True}
+#         )
         
-        # Register context
-        framework.register_context(context_id, context)
+#         # Register context
+#         framework.register_context(context_id, context)
         
-        # Create wrapper for transformation function
-        def make_wrapper(f):
-            return lambda value, old_ctx, new_ctx: f(value)
+#         # Create wrapper for transformation function
+#         def make_wrapper(f):
+#             return lambda value, old_ctx, new_ctx: f(value)
         
-        # Register transformation
-        wrapper = make_wrapper(func)
-        framework.register_transformation("classical", context_id, wrapper)
+#         # Register transformation
+#         wrapper = make_wrapper(func)
+#         framework.register_transformation("classical", context_id, wrapper)
     
-    # Define interactive update function
-    def update_plot(value, context_name):
-        # Transform the number
-        number.timeline = {0: (value, framework.contexts["classical"])}
-        context_id = context_name.lower().replace(" ", "_")
-        framework.transform_number("interactive", context_id, 1.0)
+#     # Define interactive update function
+#     def update_plot(value, context_name):
+#         # Transform the number
+#         number.timeline = {0: (value, framework.contexts["classical"])}
+#         context_id = context_name.lower().replace(" ", "_")
+#         framework.transform_number("interactive", context_id, 1.0)
         
-        # Visualize
-        fig = framework.visualize_timeline("interactive", [0, 1], figsize=(12, 5))
-        plt.tight_layout()
-        plt.show()
+#         # Visualize
+#         fig = framework.visualize_timeline("interactive", [0, 1], figsize=(12, 5))
+#         plt.tight_layout()
+#         plt.show()
     
-    # Create interactive controls
-    value_slider = FloatSlider(min=-10, max=10, step=0.1, value=1.0, description="Value:")
-    context_dropdown = Dropdown(
-        options=list(context_functions.keys()),
-        value="Heisenberg",
-        description="Context:"
-    )
+#     # Create interactive controls
+#     value_slider = FloatSlider(min=-10, max=10, step=0.1, value=1.0, description="Value:")
+#     context_dropdown = Dropdown(
+#         options=list(context_functions.keys()),
+#         value="Heisenberg",
+#         description="Context:"
+#     )
     
-    # Display interactive widget
-    interact(update_plot, value=value_slider, context_name=context_dropdown)
+#     # Display interactive widget
+#     interact(update_plot, value=value_slider, context_name=context_dropdown)
 
-# Run the interactive demo if in a Jupyter environment
-# Note: This will only work in a Jupyter notebook
-try:
-    get_ipython()
-    print("Jupyter environment detected. Run demonstrate_interactive_transformation() for the interactive demo.")
-except:
-    print("Not running in Jupyter. Interactive demo unavailable.")
+# # Run the interactive demo if in a Jupyter environment
+# # Note: This will only work in a Jupyter notebook
+# try:
+#     get_ipython()
+#     print("Jupyter environment detected. Run demonstrate_interactive_transformation() for the interactive demo.")
+# except:
+#     print("Not running in Jupyter. Interactive demo unavailable.")

@@ -752,8 +752,8 @@ def cross_cultural_numbers_demo():
             'Spanish': 'doce',
             'French': 'douze',
             'German': 'zwölf',
-            'Chinese': '十二 (shí'èr, lit. "ten-two")',
-            'Japanese': '十二 (jūni, lit. "ten-two")',
+            # 'Chinese': '十二 (shí'èr, lit. "ten-two")',
+            # 'Japanese': '十二 (jūni, lit. "ten-two")',
             'Hindi': 'बारह (bārah)'
         }
         
