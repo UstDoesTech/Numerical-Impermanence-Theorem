@@ -1021,4 +1021,4 @@ This process reflects the philosophical concept of "Mathematical Samsara" descri
 
 As Heraclitus observed that one cannot step into the same river twice, the Numerical Impermanence Theorem suggests that one cannot encounter the same number twice across sufficiently different contexts. What we call "1" is not a truth carved in stone but a momentary agreement within a specific mathematical framework.
 
-These visualizations demonstrate that the apparent stability of mathematical objects is an artifact of our limited temporal and contextual perspective. Numbers, like all phenomena, are processes rather than fixed entities—their identities constantly transforming as contexts shift and evolve.
+These visualizations demonstrate that the apparent stability of mathematical objects is an artifact of our limited temporal and contextual perspective. Numbers, like all phenomena, are processes rather than fixed entities. Their identities are constantly transforming as contexts shift and evolve.
